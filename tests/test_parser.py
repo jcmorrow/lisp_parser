@@ -9,4 +9,4 @@ class TestParser():
                        ("integer", "1"),
                        ("integer", "9"),
                        ("list_end", ")")
-                       ]).run()) == [["list", 1, 9]]
+                       ]).run()[0]) == ["list", 1, 9]

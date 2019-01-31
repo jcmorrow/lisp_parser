@@ -8,7 +8,7 @@ from src.parser import parse
 @click.command()
 @click.option('--code', default="", help='A line of lisp')
 def cli_parse(code):
-    print(parse(code))
+    print(parse(code)[0])
 
 
 if __name__ == "__main__":
