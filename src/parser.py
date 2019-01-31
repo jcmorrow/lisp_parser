@@ -1,5 +1,4 @@
 import re
-import click
 
 
 class Parser:
@@ -77,13 +76,3 @@ class Tokenizer:
 
 def parse(code):
     return Parser(Tokenizer(code).run()).run()
-
-
-@click.command()
-@click.option('--code', default="", help='A line of lisp')
-def cli_parse(code):
-    return parse(code)
-
-
-if __name__ == "__main__":
-    cli_parse()
