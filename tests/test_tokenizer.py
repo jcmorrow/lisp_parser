@@ -6,7 +6,7 @@ class TestTokenizer:
     def test_with_one_token(self):
         expect(Tokenizer("(list 1 9)").run()) == [
             ("list_start", "("),
-            ("atom", "list"),
+            ("symbol", "list"),
             ("integer", "1"),
             ("integer", "9"),
             ("list_end", ")"),

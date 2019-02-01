@@ -14,12 +14,14 @@ class Parser:
             if next_token[0] == "list_start":
                 (inner_list, tmp_tokens) = self.parse_inner_list(tmp_tokens)
                 ast.append(inner_list)
-            elif next_token[0] == "atom":
+            elif next_token[0] == "symbol":
                 ast.append(next_token[1])
             elif next_token[0] == "integer":
                 ast.append(int(next_token[1]))
-            elif next_token[0] == "operator":
-                ast.append(next_token[1])
+            else:
+                raise Exception(
+                    "Unexpected {}: {}".format(next_token[0], next_token[1])
+                )
 
         return ast
 

@@ -5,9 +5,8 @@ class Tokenizer:
     TOKENS = [
         ("\\(", "list_start"),
         ("\\)", "list_end"),
-        ("\\b[a-zA-z]+\\b", "atom"),
+        ("[a-zA-z+*:-]+", "symbol"),
         ("\\b[0-9]+\\b", "integer"),
-        ("\\B[/+*-]\\B", "operator")
     ]
 
     def __init__(self, code):
